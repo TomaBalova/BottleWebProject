@@ -36,6 +36,6 @@
 
         <p><input type="text" size="50" name="ADRESS" placeholder="Your email"></p> 
 
-        <p><input type="submit" value="Send" ></p> 
+        <p><input type="submit" value="Send" class="btn btn-default"></p> 
 
 </form> 
