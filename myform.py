@@ -30,12 +30,18 @@ def my_form():
     
 import re
 
-regex = re.compile(r'([a-zA-Z0-9]+[.-_])*[a-zA-Z0-9]+@[a-zA-Z0-9-]+(\.[A-Z|a-z]{2,})+') #Регулярное выражение для емаил
+def corEmail(mail: str):
+    regex = re.compile(r'([a-zA-Z0-9]+[.-_])*[a-zA-Z0-9]+@[a-zA-Z0-9-]+(\.[A-Z|a-z]{2,})+') #Регулярное выражение для емаил
+    if regex.match(mail):
+        return True
+    else:
+        return False
+
 def howEmail(mail, mess):
     import pdb
     qestions = {}
     qestions[mail] = mess
-    if re.fullmatch(regex, mail):
+    if corEmail(mail):
         #pdb.set_trace()
         return "Thanks! The answer will be sent to the mail %s" % mail
     else:
